@@ -1,0 +1,15 @@
+{
+  "name": "feishu-talk-plugin-doc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "xm.z <721806280@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.53",
+    "vuepress-plugin-right-anchor": "^2.0.0-rc.4"
+  }
+}
