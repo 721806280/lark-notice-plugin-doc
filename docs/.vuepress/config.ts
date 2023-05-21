@@ -29,7 +29,7 @@ export default defineUserConfig({
         logo: "/logo.png",
 
         docsRepo: "https://github.com/721806280/feishu-talk-plugin-doc",
-        docsBranch: "master",
+        docsBranch: "main",
         editLinkText: "在 GitHub 上编辑此页",
         editLinkPattern: ":repo/edit/:branch/docs/:path",
         lastUpdatedText: "上次更新",
