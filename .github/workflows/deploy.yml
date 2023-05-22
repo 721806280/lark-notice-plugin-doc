@@ -33,13 +33,10 @@ jobs:
       run: yarn install
     - name: Run build task
       run: yarn docs:build
-    - name: Deploy to Server
-      uses: easingthemes/ssh-deploy@main
+    - name: Deploy to GitHub Pages
+      uses: crazy-max/ghaction-github-pages@v2
+      with:
+        target_branch: gh-pages
+        build_dir: docs/.vuepress/doc
       env:
-          SSH_PRIVATE_KEY: ${{ secrets.PREVIEW_SERVER_SSH_PRIVATE_KEY }}
-          ARGS: '-avz --delete'
-          SOURCE: 'docs/.vuepress/doc/'
-          REMOTE_HOST: ${{ secrets.PREVIEW_SERVER_HOST }}
-          REMOTE_USER: ${{ secrets.PREVIEW_SERVER_USER }}
-          TARGET: ${{ secrets.DOC_TARGET }}
-          EXCLUDE: "/docs/.vuepress/doc/, /node_modules/"
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
