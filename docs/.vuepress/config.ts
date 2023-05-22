@@ -3,6 +3,7 @@ import {rightAnchorPlugin} from "./plugin/right-anchor/node";
 
 // https://v2.vuepress.vuejs.org/zh/
 export default defineUserConfig({
+    base: "/feishu-talk-plugin-doc/",
     port: 8090,
     lang: "zh-CN",
     title: "飞书 Jenkins 插件",
