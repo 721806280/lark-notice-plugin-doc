@@ -19,8 +19,8 @@
 
 建议使用 `国内` 地址进行下载!
 
-- [飞书 Jenkins 通知插件(梯子)](https://github.com/721806280/feishu-talk-plugin/releases/download/v1.0.0/feishu-notifications.hpi)
-- [飞书 Jenkins 通知插件(国内)](https://gitee.com/xm721806280/feishu-talk-plugin/releases/download/v1.0.0/feishu-notifications.hpi)
+- [飞书 Jenkins 通知插件(梯子)](https://github.com/721806280/feishu-notification-plugin/releases/download/v1.0.0/feishu-notifications.hpi)
+- [飞书 Jenkins 通知插件(国内)](https://gitee.com/xm721806280/feishu-notification-plugin/releases/download/v1.0.0/feishu-notifications.hpi)
 
 从 Jenkins 首页开始，点击 `系统管理` -> `插件管理` , 找到 `Deploy Plugin` 选项后输入插件地址后点击 `deploy` 即可;
 
