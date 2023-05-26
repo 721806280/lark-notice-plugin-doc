@@ -3,7 +3,7 @@ import {rightAnchorPlugin} from "./plugin/right-anchor/node";
 
 // https://v2.vuepress.vuejs.org/zh/
 export default defineUserConfig({
-    base: "/feishu-talk-plugin-doc/",
+    base: "/feishu-notification-plugin-doc/",
     port: 8090,
     lang: "zh-CN",
     title: "飞书 Jenkins 插件",
@@ -24,12 +24,12 @@ export default defineUserConfig({
         navbar: [
             {text: "指南", link: "/guide/"},
             {text: "其他", link: "/other/"},
-            {text: "Gitee", link: "https://gitee.com/xm721806280/feishu-talk-plugin", target: "_blank"},
+            {text: "Gitee", link: "https://gitee.com/xm721806280/feishu-notification-plugin", target: "_blank"},
         ],
-        repo: "https://github.com/721806280/feishu-talk-plugin",
+        repo: "https://github.com/721806280/feishu-notification-plugin",
         logo: "/logo.png",
 
-        docsRepo: "https://github.com/721806280/feishu-talk-plugin-doc",
+        docsRepo: "https://github.com/721806280/feishu-notification-plugin-doc",
         docsBranch: "main",
         editLinkText: "在 GitHub 上编辑此页",
         editLinkPattern: ":repo/edit/:branch/docs/:path",
