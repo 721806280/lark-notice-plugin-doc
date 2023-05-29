@@ -63,7 +63,13 @@ export default defineUserConfig({
                         "/other/git-emoji.md",
                         "/other/maven-resource-filter.md",
                         "/other/swagger2ToOpenApi3.md"
-                    ],
+                    ]
+                },
+                {
+                    text: "Unit Test",
+                    children: [
+                        "/other/squaretest-java-unit-test.md",
+                    ]
                 }
             ],
         },
