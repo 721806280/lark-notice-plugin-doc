@@ -60,15 +60,22 @@ export default defineUserConfig({
                 {
                     text: "Java",
                     children: [
-                        "/other/git-emoji.md",
-                        "/other/maven-resource-filter.md",
-                        "/other/swagger2ToOpenApi3.md"
+                        "/other/java/stream.md",
+                        "/other/java/lambda.md"
                     ]
                 },
                 {
                     text: "Unit Test",
                     children: [
                         "/other/squaretest-java-unit-test.md",
+                    ]
+                },
+                {
+                    text: "Other",
+                    children: [
+                        "/other/git-emoji.md",
+                        "/other/maven-resource-filter.md",
+                        "/other/swagger2ToOpenApi3.md"
                     ]
                 }
             ],
