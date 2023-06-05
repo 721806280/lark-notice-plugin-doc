@@ -20,7 +20,7 @@ export default defineUserConfig({
             },
         })
     ],
-    theme : defaultTheme({
+    theme: defaultTheme({
         navbar: [
             {text: "指南", link: "/guide/"},
             {text: "其他", link: "/other/"},
