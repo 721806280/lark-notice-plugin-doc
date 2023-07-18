@@ -177,3 +177,63 @@ pipeline {
     }
 }
 ```
+
+
+## 6. IMG卡片消息
+
+> 1. 图片显示模式 `mode` 的取值范围： crop_center: 居中裁剪模式 | fit_horizontal: 平铺模式 | custom_width: 自定义宽度 | compact_width: 紧凑宽度
+> 2. 是否展示为紧凑型的图片 `compactWidth` 的取值范围： false | true: 则展示最大宽度为278px的紧凑型图片
+> 3. 自定义图片的最大展示宽度 `customWidth` 的取值范围： 默认展示宽度撑满卡片的通栏图片，可在278px~580px范围内指定最大展示宽度
+
+```shell
+pipeline {
+    agent any
+    stages {
+        stage('text'){
+            steps {
+                echo "发送IMG卡片消息..."
+            }
+            post {
+                success {
+                    feiShuTalk (
+                        robot: "f72aa1bb-0f0b-47c7-8387-272d266dc25c",
+                        type: "INTERACTIVE",
+                        title: "📢 Jenkins 构建通知",
+                        text: [
+                            "📋 **任务名称**：[${JOB_NAME}](${JOB_URL})",
+                            "🔢 **任务编号**：[${BUILD_DISPLAY_NAME}](${BUILD_URL})",
+                            "🌟 **构建状态**: <font color='green'>成功</font>",
+                            "🕐 **构建用时**: ${currentBuild.duration} ms",
+                            "👤 **执  行 者**: Started by user anonymous",
+                            "<at id=all></at>"
+                        ],
+                        topImg: [
+                            mode: "fit_horizontal",
+                            imgKey: "img_v2_9b14e850-3757-43ae-96b4-965ed81e7f8g",
+                            compactWidth: false,
+                            customWidth: 278,
+                            altContent: "这是正文顶部的图片哦!",
+                        ],
+                        bottomImg: [
+                            mode: "fit_horizontal",
+                            imgKey: "img_v2_9b14e850-3757-43ae-96b4-965ed81e7f8g",
+                            altContent: "这是正文底部的图片哦!",
+                        ],
+                        buttons: [
+                           [
+                              title: "更改记录",
+                              url: "${BUILD_URL}changes"
+                           ],
+                           [
+                              title: "控制台",
+                              type: "danger",
+                              url: "${BUILD_URL}console"
+                           ]
+                        ]
+                    )
+                }
+            }
+        }
+    }
+}
+```
