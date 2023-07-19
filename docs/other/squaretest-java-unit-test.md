@@ -23,7 +23,7 @@ IntelliJ IDEA 的 Squaretest 插件允许您自动为 Java 源类生成单元测
 ![生成测试方法 Gif](./img/squaretest/create-test-method.gif)
 
 
-- [v1.7.1](https://pan.baidu.com/s/1DFF5aXGURKkdxfVVvKDzgw?pwd=tyj2) ⚠️ 仅供个人学习使用
+- [v1.7.2](https://pan.baidu.com/s/1aElSJIx1-cZ9dgrarob7pg?pwd=9etf) ⚠️ 仅供个人学习使用
 
 ```text
 --- BEGIN SQUARETEST LICENSE ---
