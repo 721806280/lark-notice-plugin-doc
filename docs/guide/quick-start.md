@@ -1,7 +1,8 @@
 # 快速开始
 
 - [快速搭建 Jenkins 服务](https://blog.csdn.net/qq_38765404/article/details/123497710/)
-- [飞书自定义机器人指南](https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN)
+- [飞书自定义机器人指南](https://open.feishu.cn/document/client-docs/bot-v3/add-custom-bot)
+- [Lark自定义机器人指南](https://open.feishu.cn/document/client-docs/bot-v3/add-custom-bot)
 
 
 ## 环境准备
