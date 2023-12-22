@@ -1,8 +1,8 @@
 # 查看环境变量
 
-## 1. 默认的环境变量
+## 1. 内置的环境变量
 
-- [默认的环境变量](http://localhost:8080/jenkins/env-vars.html/)
+- [${YOUR_JENKINS_HOST}/jenkins/env-vars.html](http://localhost:8080/jenkins/env-vars.html)
 
 ## 2. 自定义环境变量
 
