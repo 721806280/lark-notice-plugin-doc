@@ -3,7 +3,7 @@
 ## 1. 机器人配置
 ![](../img/faq-config.png)
 
-## 2. 自定义消息(Markdown)
+## 2. 自定义消息内容
 ![](../img/faq-custom-md-msg.png)
 
 ```text
@@ -15,14 +15,13 @@
 ![图片](img_v2_16d4ea4f-6cd5-48fa-97fd-25c8d4e79b0g)
 ```
 
-## 3. 自定义消息(Json)
+## 3. 自定义卡片消息
 ![](../img/faq-custom-json-msg.png)
 
-可通过 `消息卡片搭建平台` 生成Json消息体;
+通过如下 `消息卡片搭建平台` 生成卡片消息体:
 
 - [飞书消息卡片搭建平台](https://open.feishu.cn/tool/cardbuilder)
 - [Lark消息卡片搭建平台](https://open.larksuite.com/tool/cardbuilder)
-
 
 ```Json
 {
