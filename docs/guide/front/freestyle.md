@@ -7,8 +7,8 @@
 ![](../img/faq-custom-md-msg.png)
 
 ```text
-📋 **任务名称**：[demo](http://127.0.0.1:8080/jenkins/job/demo/)
-🔢 **任务编号**：[#5](http://127.0.0.1:8080/jenkins/job/demo/5/)
+📋 **任务名称**：[demo](${JENKINS_URL}/job/${JOB_NAME}/)
+🔢 **任务编号**：[#5](${JENKINS_URL}/job/${JOB_NAME}/${BUILD_NUMBER}/)
 🌟 **构建状态**:  <font color=green>开始</font>
 🕐 **构建用时**:  9.5 sec and counting
 👤 **执  行 者**:  Started by user anonymous
@@ -53,7 +53,7 @@
     },
     {
       "tag": "markdown",
-      "content": "📋 **任务名称**：[demo](http://localhost:8080/jenkins/job/demo/)\n🔢 **任务编号**：[#33](http://localhost:8080/jenkins/job/demo/33/)\n🌟 **构建状态**:  <text_tag color='blue'>开始</text_tag>\n🕐 **构建用时**:  3 ms and counting\n👤 **执  行 者**:  Started by user anonymous\n"
+      "content": "📋 **任务名称**：[${PROJECT_NAME}](${JENKINS_URL}/job/${PROJECT_NAME}/)\n🔢 **任务编号**：[${JOB_NAME}](${JENKINS_URL}/job/${PROJECT_NAME}/${BUILD_NUMBER}/)\n🌟 **构建状态**:  <text_tag color='blue'>${JOB_STATUS}</text_tag>\n🕐 **构建用时**:  ${JOB_DURATION}\n👤 **执  行 者**:  ${EXECUTOR_NAME}\n"
     },
     {
       "tag": "hr"
@@ -63,7 +63,7 @@
       "actions": [
         {
           "tag": "button",
-          "url": "http://localhost:8080/jenkins/job/demo/33//changes",
+          "url": "${JENKINS_URL}/job/${PROJECT_NAME}/${BUILD_NUMBER}/changes",
           "type": "primary",
           "text": {
             "tag": "plain_text",
@@ -72,7 +72,7 @@
         },
         {
           "tag": "button",
-          "url": "http://localhost:8080/jenkins/job/demo/33//console",
+          "url": "${JENKINS_URL}/job/${PROJECT_NAME}/${BUILD_NUMBER}/console",
           "type": "primary",
           "text": {
             "tag": "plain_text",
