@@ -7,11 +7,11 @@
 ![](../img/faq-custom-md-msg.png)
 
 ```text
-📋 **任务名称**：[demo](${JENKINS_URL}/job/${JOB_NAME}/)
-🔢 **任务编号**：[#5](${JENKINS_URL}/job/${JOB_NAME}/${BUILD_NUMBER}/)
-🌟 **构建状态**:  <font color=green>开始</font>
-🕐 **构建用时**:  9.5 sec and counting
-👤 **执  行 者**:  Started by user anonymous
+📋 **任务名称**：[${PROJECT_NAME}](${JENKINS_URL}/job/${PROJECT_NAME}/)
+🔢 **任务编号**：[${JOB_NAME}](${JENKINS_URL}/job/${PROJECT_NAME}/${BUILD_NUMBER}/)
+🌟 **构建状态**:  <text_tag color='blue'>${JOB_STATUS}</text_tag>
+🕐 **构建用时**:  ${JOB_DURATION}
+👤 **执  行 者**:  ${EXECUTOR_NAME}
 ![图片](img_v2_16d4ea4f-6cd5-48fa-97fd-25c8d4e79b0g)
 ```
 
