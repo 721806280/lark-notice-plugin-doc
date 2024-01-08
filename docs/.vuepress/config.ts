@@ -67,7 +67,13 @@ export default defineUserConfig({
                 {
                     text: "Unit Test",
                     children: [
-                        "/other/squaretest-java-unit-test.md",
+                        "/other/squaretest-java-unit-test.md"
+                    ]
+                },
+                {
+                    text: "Template Engine",
+                    children: [
+                        "/other/thymeleaf.md"
                     ]
                 },
                 {
