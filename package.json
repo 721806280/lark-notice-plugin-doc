@@ -1,15 +1,19 @@
 {
   "name": "feishu-notification-plugin-doc",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "2.0.0",
   "author": "xm.z <721806280@qq.com>",
   "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8"
+  },
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:dev": "vitepress dev docs --host",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
-    "vuepress": "2.0.0-beta.62",
-    "vuepress-plugin-right-anchor": "2.1.0-rc.2"
+    "vitepress": "1.0.0-rc.41"
   }
 }
