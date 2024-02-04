@@ -4,13 +4,32 @@ import {VERSION} from "./constants";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
     title: "飞书 Jenkins 插件",
-    description: '帮助开发者快速高效的完成功能开发',
+    description: '用于将构建结果推送到飞书平台',
+    base: "/feishu-notification-plugin-doc/",
+    head: [['link', {rel: 'icon', type: 'image/x-icon', href: '/feishu-notification-plugin-doc/favicon.ico'}]],
     transformPageData: (pageData: PageData, ctx: TransformPageContext) => {
         pageData.frontmatter.version = VERSION
     },
     themeConfig: {
-        logo: './logo.png',
         // https://vitepress.dev/reference/default-theme-config
+        logo: '/logo.png',
+        search: {
+            provider: 'local',
+        },
+        editLink: {
+            pattern: 'https://github.com/721806280/feishu-notification-plugin-doc/edit/2.0.0/docs/:path',
+            text: '在 GitHub 上编辑此页面'
+        },
+        lastUpdated: {
+            text: '最后更新于',
+        },
+        outline: {
+            label: '页面导航'
+        },
+        docFooter: {
+            prev: '上一页',
+            next: '下一页'
+        },
         nav: [
             {text: '插件指南', link: '/guide/'},
             {text: '技术分享', link: '/java/'},
@@ -69,6 +88,10 @@ export default defineConfig({
 
         socialLinks: [
             {icon: 'github', link: 'https://github.com/721806280/feishu-notification-plugin'}
-        ]
+        ],
+        footer: {
+            message: '<a href="https://github.com/721806280/feishu-notification-plugin/blob/main/LICENSE">MIT License</a>',
+            copyright: 'Copyright © 2024 <a href="https://github.com/721806280/feishu-notification-plugin">Hacker</a>'
+        }
     }
 })

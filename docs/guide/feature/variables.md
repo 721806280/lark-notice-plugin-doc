@@ -2,7 +2,7 @@
 
 ## 1. 内置的环境变量
 
-- [${YOUR_JENKINS_HOST}/jenkins/env-vars.html](http://localhost:8080/jenkins/env-vars.html)
+- [${YOUR_JENKINS_HOST}/jenkins/env-vars.html](http://127.0.0.1/jenkins/env-vars.html)
 
 ## 2. 自定义环境变量
 

@@ -13,7 +13,4 @@ features:
     details: 飞书与 Jenkins 完美结合，构建通知即时推送，给团队带来便利。
   - title: 进展可视
     details: 构建通知插件将 Jenkins 功能扩展到飞书，使项目进度更透明更清晰。
-footer: "MIT Licensed | Copyright © 2022 Hacker <br> <br>
-<a href='https://beian.miit.gov.cn' target='_blank' style='color: var(--c-text-lighter);'>京ICP备‪11088888‬号-1</a>"
-footerHtml: true
 ---
