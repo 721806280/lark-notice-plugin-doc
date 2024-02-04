@@ -750,4 +750,5 @@ modelMap.put("modelParam", id);
 var modelParam = '[[${modelParam}]]';
 ```
 
+> [!WARNING]
 >  取值时，推荐使用单引号或双引号包裹，避免当值为null时，前台的语法错误，如：var param = ;
