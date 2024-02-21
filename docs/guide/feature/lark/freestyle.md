@@ -1,10 +1,10 @@
 # Freestyle 项目
 
 ## 1. 机器人配置
-![](../img/faq-config.png)
+![](img/faq-config.png)
 
 ## 2. 自定义消息内容
-![](../img/faq-custom-md-msg.png)
+![](img/faq-custom-md-msg.png)
 
 ```text
 📋 **任务名称**：[${PROJECT_NAME}](${JENKINS_URL}/job/${PROJECT_NAME}/)
@@ -16,7 +16,7 @@
 ```
 
 ## 3. 自定义卡片消息
-![](../img/faq-custom-json-msg.png)
+![](img/faq-custom-json-msg.png)
 
 通过如下 `消息卡片搭建平台` 生成卡片消息体:
 

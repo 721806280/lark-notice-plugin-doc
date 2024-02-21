@@ -1,8 +1,9 @@
 # 快速开始
 
 - [快速搭建 Jenkins 服务](https://blog.csdn.net/qq_38765404/article/details/123497710/)
-- [飞书自定义机器人指南](https://open.feishu.cn/document/client-docs/bot-v3/add-custom-bot)
 - [Lark自定义机器人指南](https://open.larksuite.com/document/client-docs/bot-v3/add-custom-bot)
+- [飞书自定义机器人指南](https://open.feishu.cn/document/client-docs/bot-v3/add-custom-bot)
+- [钉钉自定义机器人指南](https://open.dingtalk.com/document/orgapp/custom-robots-send-group-messages)
 
 ## 环境准备
 
@@ -19,8 +20,8 @@
 
 建议使用 `国内` 地址进行下载!
 
-- [飞书 Jenkins 通知插件(梯子)](https://github.com/721806280/feishu-notification-plugin/releases/download/v1.2.3/feishu-notification.hpi)
-- [飞书 Jenkins 通知插件(国内)](https://gitee.com/xm721806280/feishu-notification-plugin/releases/download/v1.2.3/feishu-notification.hpi)
+- [Lark Notice Plugin(梯子)](https://github.com/721806280/lark-notice-plugin/releases/download/v1.2.3/feishu-notification.hpi)
+- [Lark Notice Plugin(国内)](https://gitee.com/xm721806280/lark-notice-plugin/releases/download/v1.2.3/feishu-notification.hpi)
 
 从 Jenkins 首页开始，点击 `系统管理` -> `插件管理` , 找到 `Deploy Plugin` 选项后输入插件地址后点击 `deploy` 即可;
 
@@ -29,7 +30,7 @@
 
 - 全局配置
 
-打开 `Manage Jenkins` 页面，找到 `飞书` 配置项，如下图所示：
+打开 `Manage Jenkins` 页面，找到 `Lark Notice` 配置项，如下图所示：
 
 ![](./img/faq-manage.png)
 

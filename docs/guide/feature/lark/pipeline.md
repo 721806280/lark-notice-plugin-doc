@@ -14,7 +14,7 @@ pipeline {
             }
             post {
                 success {
-                    feiShuTalk (
+                    lark (
                         robot: 'f72aa1bb-0f0b-47c7-8387-272d266dc25c',
                         type: 'TEXT',
                         text: [
@@ -41,7 +41,7 @@ pipeline {
             }
             post {
                 success {
-                    feiShuTalk (
+                    lark (
                         robot: 'f72aa1bb-0f0b-47c7-8387-272d266dc25c',
                         type: 'SHARE_CHAT',
                         shareChatId: 'oc_f5b1a7eb27ae2c7b6adc2a74faf339ff'
@@ -66,7 +66,7 @@ pipeline {
             }
             post {
                 success {
-                    feiShuTalk (
+                    lark (
                         robot: 'f72aa1bb-0f0b-47c7-8387-272d266dc25c',
                         type: 'IMAGE',
                         imageKey: 'img_ecffc3b9-8f14-400f-a014-05eca1a4310g'
@@ -90,7 +90,7 @@ pipeline {
             }
             post {
                 success {
-                    feiShuTalk (
+                    lark (
                         robot: 'f72aa1bb-0f0b-47c7-8387-272d266dc25c',
                         type: 'POST',
                         title: '项目更新通知',
@@ -147,9 +147,9 @@ pipeline {
             }
             post {
                 success {
-                    feiShuTalk (
+                    lark (
                         robot: "f72aa1bb-0f0b-47c7-8387-272d266dc25c",
-                        type: "INTERACTIVE",
+                        type: "CARD",
                         title: "📢 Jenkins 构建通知",
                         text: [
                             "📋 **任务名称**：[${JOB_NAME}](${JOB_URL})",
@@ -195,9 +195,9 @@ pipeline {
             }
             post {
                 success {
-                    feiShuTalk (
+                    lark (
                         robot: "f72aa1bb-0f0b-47c7-8387-272d266dc25c",
-                        type: "INTERACTIVE",
+                        type: "CARD",
                         title: "📢 Jenkins 构建通知",
                         text: [
                             "📋 **任务名称**：[${JOB_NAME}](${JOB_URL})",

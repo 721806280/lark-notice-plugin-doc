@@ -3,10 +3,10 @@ import {VERSION} from "./constants";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-    title: "飞书 Jenkins 插件",
+    title: "Lark Notice",
     description: '用于将构建结果推送到飞书平台',
-    base: "/feishu-notification-plugin-doc/",
-    head: [['link', {rel: 'icon', type: 'image/x-icon', href: '/feishu-notification-plugin-doc/favicon.ico'}]],
+    base: "/lark-notice-plugin-doc/",
+    head: [['link', {rel: 'icon', type: 'image/x-icon', href: '/lark-notice-plugin-doc/favicon.ico'}]],
     transformPageData: (pageData: PageData, ctx: TransformPageContext) => {
         pageData.frontmatter.version = VERSION
     },
@@ -17,7 +17,7 @@ export default defineConfig({
             provider: 'local',
         },
         editLink: {
-            pattern: 'https://github.com/721806280/feishu-notification-plugin-doc/edit/2.0.0/docs/:path',
+            pattern: 'https://github.com/721806280/lark-notice-plugin-doc/edit/2.0.0/docs/:path',
             text: '在 GitHub 上编辑此页面'
         },
         lastUpdated: {
@@ -49,16 +49,23 @@ export default defineConfig({
                     items: [
                         {text: '插件简介', link: '/guide/'},
                         {text: '快速开始', link: '/guide/QUICK-START'},
+                        {text: '环境变量', link: "/guide/feature/variables"},
                         {text: '常见问题', link: '/guide/FAQ'},
                         {text: '改动日志', link: '/guide/CHANGELOG'},
                     ],
                 },
                 {
-                    text: "使用文档",
+                    text: "飞书平台",
                     items: [
-                        {text: 'Freestyle', link: "/guide/feature/freestyle"},
-                        {text: 'Pipeline', link: "/guide/feature/pipeline"},
-                        {text: '环境变量', link: "/guide/feature/variables"},
+                        {text: 'Freestyle', link: "/guide/feature/lark/freestyle"},
+                        {text: 'Pipeline', link: "/guide/feature/lark/pipeline"},
+                    ],
+                },
+                {
+                    text: "钉钉平台",
+                    items: [
+                        {text: 'Freestyle', link: "/guide/feature/ding/freestyle"},
+                        {text: 'Pipeline', link: "/guide/feature/ding/pipeline"},
                     ],
                 }
             ],
@@ -87,11 +94,11 @@ export default defineConfig({
         },
 
         socialLinks: [
-            {icon: 'github', link: 'https://github.com/721806280/feishu-notification-plugin'}
+            {icon: 'github', link: 'https://github.com/721806280/lark-notice-plugin'}
         ],
         footer: {
-            message: '<a href="https://github.com/721806280/feishu-notification-plugin/blob/main/LICENSE">MIT License</a>',
-            copyright: 'Copyright © 2024 <a href="https://github.com/721806280/feishu-notification-plugin">Hacker</a>'
+            message: '<a href="https://github.com/721806280/lark-notice-plugin/blob/main/LICENSE">MIT License</a>',
+            copyright: 'Copyright © 2024 <a href="https://github.com/721806280/lark-notice-plugin">Hacker</a>'
         }
     }
 })
