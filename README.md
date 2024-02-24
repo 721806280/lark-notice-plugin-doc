@@ -1,4 +1,4 @@
-# 飞书 Jenkins 通知插件 VitePress 文档仓库
+# Lark Notice Plugin 文档仓库
 
 ## 如何在本地编辑和预览该网站
 
