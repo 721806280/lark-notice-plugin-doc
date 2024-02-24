@@ -7,9 +7,9 @@ name: Deploy to preview server
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "2.0.0" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "2.0.0" ]
+    branches: [ "main" ]
 
   # 手动触发事件
   workflow_dispatch:
