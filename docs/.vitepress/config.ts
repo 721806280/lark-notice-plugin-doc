@@ -24,7 +24,8 @@ export default defineConfig({
             text: '最后更新于',
         },
         outline: {
-            label: '页面导航'
+            label: '页面导航',
+            level: [2, 3]
         },
         docFooter: {
             prev: '上一页',
