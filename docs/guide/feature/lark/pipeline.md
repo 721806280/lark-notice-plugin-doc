@@ -156,7 +156,7 @@ pipeline {
                             "🔢 **任务编号**：[${BUILD_DISPLAY_NAME}](${BUILD_URL})",
                             "🌟 **构建状态**: <font color='green'>成功</font>",
                             "🕐 **构建用时**: ${currentBuild.duration} ms",
-                            "👤 **执  行 者**: Started by user anonymous",
+                            "👤 **执  行 者**: ${env.BUILD_USER}",
                             "<at id=all></at>"
                         ],
                         buttons: [
@@ -204,7 +204,7 @@ pipeline {
                             "🔢 **任务编号**：[${BUILD_DISPLAY_NAME}](${BUILD_URL})",
                             "🌟 **构建状态**: <font color='green'>成功</font>",
                             "🕐 **构建用时**: ${currentBuild.duration} ms",
-                            "👤 **执  行 者**: Started by user anonymous",
+                            "👤 **执  行 者**: ${env.BUILD_USER}",
                             "<at id=all></at>"
                         ],
                         topImg: [

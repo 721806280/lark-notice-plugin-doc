@@ -86,7 +86,7 @@ pipeline {
                             "🔢 **任务编号**：[${BUILD_DISPLAY_NAME}](${BUILD_URL})  ",
                             "🌟 **构建状态**: ${currentBuild.currentResult}  ",
                             "🕐 **构建用时**: ${currentBuild.duration} ms  ",
-                            "👤 **执  行 者**: Started by user anonymous  ",
+                            "👤 **执  行 者**: ${env.BUILD_USER}  ",
                             '![图片](https://p4.itc.cn/q_70/images03/20230512/32c7ad09b5904bea8506d74f96483000.png)  '
                         ],
                         ats: [
@@ -126,7 +126,7 @@ pipeline {
                             "🔢 **任务编号**：[${BUILD_DISPLAY_NAME}](${BUILD_URL})  ",
                             "🌟 **构建状态**: ${currentBuild.currentResult}  ",
                             "🕐 **构建用时**: ${currentBuild.duration} ms  ",
-                            "👤 **执  行 者**: Started by user anonymous  ",
+                            "👤 **执  行 者**: ${env.BUILD_USER}  ",
                             '![图片](https://p4.itc.cn/q_70/images03/20230512/32c7ad09b5904bea8506d74f96483000.png)  '
                         ],
                         atAll: false,
