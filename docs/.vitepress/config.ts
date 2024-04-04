@@ -10,6 +10,11 @@ export default defineConfig({
     transformPageData: (pageData: PageData, ctx: TransformPageContext) => {
         pageData.frontmatter.version = VERSION
     },
+    ignoreDeadLinks: [
+        // ignore all localhost links
+        /^https?:\/\/localhost/,
+    ],
+    srcDir: ".",
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         logo: '/logo.png',
@@ -93,7 +98,6 @@ export default defineConfig({
             ],
             "/other/": [],
         },
-
         socialLinks: [
             {icon: 'github', link: 'https://github.com/721806280/lark-notice-plugin'}
         ],

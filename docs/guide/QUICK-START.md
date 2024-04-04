@@ -20,8 +20,8 @@
 
 建议使用 `国内` 地址进行下载!
 
-- [Lark Notice Plugin(梯子)](https://github.com/721806280/lark-notice-plugin/releases/download/v2.0.0/lark-notice.hpi)
-- [Lark Notice Plugin(国内)](https://gitee.com/xm721806280/lark-notice-plugin/releases/download/v2.0.0/lark-notice.hpi)
+- [Lark Notice Plugin(梯子)](https://github.com/721806280/lark-notice-plugin/releases)
+- [Lark Notice Plugin(国内)](https://gitee.com/xm721806280/lark-notice-plugin/releases)
 
 从 Jenkins 首页开始，点击 `系统管理` -> `插件管理` , 找到 `Deploy Plugin` 选项后输入插件地址后点击 `deploy` 即可;
 
