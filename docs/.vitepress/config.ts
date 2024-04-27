@@ -86,19 +86,14 @@ export default defineConfig({
                 {
                     text: 'Unit Test',
                     items: [
-                        {text: 'SquareTest 单元测试', link: '/java/squaretest'},
+                        {text: 'SquareTest 单元测试', link: '/java/square-test'},
+                        {text: 'SquareTest 插件逆向', link: '/java/square-test-crack'}
                     ]
                 },
                 {
                     text: 'Template Engine',
                     items: [
                         {text: 'Thymeleaf 模板引擎', link: '/java/thymeleaf'},
-                    ]
-                },
-                {
-                    text: '逆向补丁',
-                    items: [
-                        {text: 'TestStarter', link: '/other/crack/test-starter'},
                     ]
                 }
             ],

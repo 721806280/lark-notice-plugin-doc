@@ -21,15 +21,3 @@ IntelliJ IDEA 的 Squaretest 插件允许您自动为 Java 源类生成单元测
 开始输入要创建的测试方法的名称，以查看基于源类中方法的代码完成建议； 然后选择一种建议的方法来创建它。
 
 ![生成测试方法 Gif](img/squaretest/create-test-method.gif)
-
-
-- [v1.8.10](https://pan.baidu.com/s/1sbmLPTyBJgtkPoQehK7MdA?pwd=0918) ⚠️ 仅供个人学习使用
-
-```text
---- BEGIN SQUARETEST LICENSE ---
-XmInc
-200 User License
-SQT1-20240425-0000-4000-89ab-abc123456789
-MDwCHGoLrRftstAxrTT7l/vdPRcnE5UxMzd0e+EeixsCHD6NMZybdq0zLypOFzqSaeowWn6l46iK3gOvQcY=
---- END SQUARETEST LICENSE ---
-```
