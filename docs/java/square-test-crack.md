@@ -421,7 +421,7 @@ public class GenerateLicenseSign {
 
 ## 激活插件
 
-- [v1.8.10](https://pan.baidu.com/s/1sbmLPTyBJgtkPoQehK7MdA?pwd=0918) ⚠️ 仅供个人学习使用
+- [Download](https://pan.baidu.com/s/1sbmLPTyBJgtkPoQehK7MdA?pwd=0918) ⚠️ 仅供个人学习使用
 
 ```text
 --- BEGIN SQUARETEST LICENSE ---
