@@ -4,8 +4,8 @@
 
 可通过 `消息卡片搭建平台` 上传图片，应用选择:  `开发者小助手` 或 `Open Platform Assistant`， 上传后获得图片资源key;
 
-- [飞书消息卡片搭建平台](https://open.feishu.cn/tool/cardbuilder)
-- [Lark消息卡片搭建平台](https://open.larksuite.com/tool/cardbuilder)
+- [飞书消息卡片搭建平台](https://open.feishu.cn/cardkit)
+- [Lark消息卡片搭建平台](https://open.larksuite.com/cardkit)
 
 ![](./img/faq-upload-image.png)
 

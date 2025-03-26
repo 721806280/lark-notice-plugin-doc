@@ -20,8 +20,8 @@
 
 通过如下 `消息卡片搭建平台` 生成卡片消息体:
 
-- [飞书消息卡片搭建平台](https://open.feishu.cn/tool/cardbuilder)
-- [Lark消息卡片搭建平台](https://open.larksuite.com/tool/cardbuilder)
+- [飞书消息卡片搭建平台](https://open.feishu.cn/cardkit)
+- [Lark消息卡片搭建平台](https://open.larksuite.com/cardkit)
 
 ```Json
 {
