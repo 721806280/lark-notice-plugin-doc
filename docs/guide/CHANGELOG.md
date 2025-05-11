@@ -1,5 +1,19 @@
 # 更新日志
 
+## [2.1.0] 2025-05-11
+
+### ⭐ Features
+
+- 💥 Introduce breaking changes. jenkins.version >= 2.492.
+- ♻️ Refactor code. 支持配置禁用客户端证书验证.
+- ♻️ Refactor plugin for improved maintainability and localization.
+
+### 🔨 Dependency
+
+- ⬆️ **Bump io.jenkins.tools.bom:bom-2.492.x**
+- ⬆️ **Bump org.jenkins-ci.plugins:plugin** from 4.78 to 5.16
+- ⬆️ **Bump org.projectlombok:lombok** from 1.18.26 to 1.18.38
+
 ## [2.0.0] 2024-02-24
 
 ### ⭐ Features
