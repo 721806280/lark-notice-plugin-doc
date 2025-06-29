@@ -1,5 +1,16 @@
 # 更新日志
 
+## [2.1.1] 2025-06-29
+
+### ⭐ Features
+
+- ✨ support multibranch pipeline notifications.
+- ♻️ Core modules refactored for better maintainability and scalability.
+
+### 🔨 Dependency
+
+- ⬆️ **Bump org.jenkins-ci.plugins:plugin** from 5.16 to 5.17
+
 ## [2.1.0] 2025-05-11
 
 ### ⭐ Features
