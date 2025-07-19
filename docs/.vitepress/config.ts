@@ -84,20 +84,26 @@ export default defineConfig({
                     ]
                 },
                 {
-                    text: 'Unit Test',
-                    items: [
-                        {text: 'SquareTest 单元测试', link: '/java/square-test'},
-                        {text: 'SquareTest 插件逆向', link: '/java/square-test-crack'}
-                    ]
-                },
-                {
                     text: 'Template Engine',
                     items: [
                         {text: 'Thymeleaf 模板引擎', link: '/java/thymeleaf'},
                     ]
+                },
+                {
+                    text: 'Unit Test',
+                    items: [
+                        {text: 'SquareTest 单元测试', link: '/other/crack/square-test'},
+                        {text: 'SquareTest 插件逆向', link: '/other/crack/square-test-crack'}
+                    ]
+                },
+                {
+                    text: 'MyBatis Code Helper',
+                    items: [
+                        {text: 'MyBatisCodeHelper 插件逆向', link: '/other/crack/mybatis-code-helper'}
+                    ]
                 }
             ],
-            "/other/": [],
+            "/other/": []
         },
         socialLinks: [
             {icon: 'github', link: 'https://github.com/721806280/lark-notice-plugin'}
