@@ -88,12 +88,6 @@ public class MyBatisCodeHelperProCrack {
      * 插件名称，用于构建查找路径。
      * 通常对应插件存放的主目录名。
      */
-    private static final String PLUGIN_NAME = "MyBatisCodeHelper-Pro";
-
-    /**
-     * 目标类的全限定类名。
-     * 此类将被修改以实现破解逻辑。
-     */
     private static final String TARGET_CLASS = "com.ccnode.codegenerator.validate.utils.RsaUtils";
 
     /**
@@ -108,18 +102,12 @@ public class MyBatisCodeHelperProCrack {
      */
     private static final String METHOD_BODY = "return (com.ccnode.codegenerator.validate.response.ValidateNewResultData)gson.fromJson($1,com.ccnode.codegenerator.validate.response.ValidateNewResultData.class);";
 
-    /**
-     * 生成修改后的类文件的临时目录名。
-     * 用于保存修改后的 .class 文件以便重新打包进 JAR。
-     */
-    private static final String OUTPUT_DIR_NAME = "modified_classes";
-
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         try {
             File jarFile = findMatchingJar();
             File modifiedClassFile = modifyTargetClass(jarFile);
             updateJarFile(jarFile, modifiedClassFile);
-            cleanupTempDirectory(jarFile, modifiedClassFile);
+            cleanupTempDirectory(jarFile);
         } catch (Exception e) {
             System.err.println("❌ 程序异常: " + e.getMessage());
         }
@@ -148,8 +136,7 @@ public class MyBatisCodeHelperProCrack {
      * 修改目标类的方法
      */
     private static File modifyTargetClass(File jarFile) throws Exception {
-        String basePath = jarFile.getParent();
-        String outputDirPath = Paths.get(basePath, OUTPUT_DIR_NAME).toString();
+        String outputDirPath = Paths.get(jarFile.getParent()).toString();
         Path outputDir = Paths.get(outputDirPath);
 
         if (Files.exists(outputDir)) {
@@ -191,12 +178,12 @@ public class MyBatisCodeHelperProCrack {
      * 更新 JAR 文件
      */
     private static void updateJarFile(File jarFile, File modifiedClassFile) throws Exception {
-        String jarPath = jarFile.getAbsolutePath();
-        String classPath = modifiedClassFile.getAbsolutePath();
+        File directory = jarFile.getParentFile();
+        String classPath = directory.toPath().relativize(modifiedClassFile.toPath()).toString();
 
-        ProcessBuilder pb = new ProcessBuilder("jar", "uvf", jarPath, classPath);
+        ProcessBuilder pb = new ProcessBuilder("jar", "uvf", jarFile.getName(), classPath);
         pb.redirectErrorStream(true);
-        pb.directory(jarFile.getParentFile());
+        pb.directory(directory);
 
         System.out.println("🔧 正在更新 JAR 文件...");
         Process process = pb.start();
@@ -219,9 +206,8 @@ public class MyBatisCodeHelperProCrack {
     /**
      * 清理临时目录
      */
-    private static void cleanupTempDirectory(File jarFile, File modifiedClassFile) throws IOException {
-        String basePath = jarFile.getParent();
-        File tempDir = new File(Paths.get(basePath, OUTPUT_DIR_NAME).toAbsolutePath().toString());
+    private static void cleanupTempDirectory(File jarFile) throws IOException {
+        File tempDir = new File(Paths.get(jarFile.getParent()).toAbsolutePath().toString());
 
         if (tempDir.exists()) {
             deleteDirectoryRecursively(tempDir);
@@ -232,31 +218,23 @@ public class MyBatisCodeHelperProCrack {
      * 递归删除目录
      */
     private static void deleteDirectoryRecursively(@NonNull File directory) throws IOException {
-        if (!directory.exists()) {
-            return;
+        // 构建 com 目录路径
+        Path comDir = directory.toPath().resolve("com");
+        if (Files.isDirectory(comDir)) {
+            System.out.println("🔧 正在删除 com 目录: " + comDir);
+
+            // 使用 try-with-resources 包裹 Files.walk() 生成的 Stream
+            try (Stream<Path> walkStream = Files.walk(comDir)) {
+                walkStream.sorted(Comparator.reverseOrder()).forEach(path -> {
+                    try {
+                        Files.delete(path);
+                        System.out.println("🗑️ 删除: " + path);
+                    } catch (IOException e) {
+                        System.err.println("❌ 删除失败: " + path + "，原因: " + e.getMessage());
+                    }
+                });
+            }
         }
-
-        Path rootPath = directory.toPath();
-        Files.walkFileTree(rootPath, new SimpleFileVisitor<>() {
-            @NonNull
-            @Override
-            public FileVisitResult visitFile(@NonNull Path file, @NonNull BasicFileAttributes attrs) throws IOException {
-                Files.delete(file);
-                System.out.println("🗑️ 删除文件: " + file);
-                return FileVisitResult.CONTINUE;
-            }
-
-            @NonNull
-            @Override
-            public FileVisitResult postVisitDirectory(@NonNull Path dir, IOException exc) throws IOException {
-                if (exc != null) {
-                    throw exc;
-                }
-                Files.delete(dir);
-                System.out.println("📁 删除目录: " + dir);
-                return FileVisitResult.CONTINUE;
-            }
-        });
     }
 }
 ```
