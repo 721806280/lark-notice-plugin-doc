@@ -245,6 +245,8 @@ public class MyBatisCodeHelperProCrack {
 
 ### 4. 离线激活
 
+- [Download](https://pan.baidu.com/s/1GLvphvvWUhsAY5OPvqLd5g?pwd=0918) ⚠️ 仅供个人学习使用
+
 ```text
 {
     "paidKey": "xm.z",
