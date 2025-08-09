@@ -1,5 +1,16 @@
 # 更新日志
 
+## [2.1.2] 2025-08-09
+
+### ⭐ Features
+
+- ✨ Feishu supports sending structured card messages in JSON 2.0 format
+- 💥 Introduce breaking changes. jenkins.version >= 2.504.3
+
+### 🔨 Dependency
+
+- ⬆️ **Bump org.jenkins-ci.plugins:plugin** from 5.17 to 5.18
+
 ## [2.1.1] 2025-06-29
 
 ### ⭐ Features

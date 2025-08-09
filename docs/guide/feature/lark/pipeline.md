@@ -181,9 +181,15 @@ pipeline {
 
 ## 6. IMG卡片消息
 
-> 1. 图片显示模式 `mode` 的取值范围： crop_center: 居中裁剪模式 | fit_horizontal: 平铺模式 | custom_width: 自定义宽度 | compact_width: 紧凑宽度
-> 2. 是否展示为紧凑型的图片 `compactWidth` 的取值范围： false | true: 则展示最大宽度为278px的紧凑型图片
-> 3. 自定义图片的最大展示宽度 `customWidth` 的取值范围： 默认展示宽度撑满卡片的通栏图片，可在278px~580px范围内指定最大展示宽度
+| 字段            | 类型      | 说明                                                                                                                                                                                                                                                                                         |
+|---------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `title`       | string  | 图片标题                                                                                                                                                                                                                                                                                       |
+| `altContent`  | string  | 悬浮（hover）在图片上时展示的说明文案                                                                                                                                                                                                                                                                      |
+| `radius`      | string  | 图片圆角半径，支持以下格式：<br>• `5px`（像素）<br>• `20%`（百分比）                                                                                                                                                                                                                                              |
+| `scale_type`  | string  | 图片裁剪模式（当图片比例与 `size` 不一致时生效）：<br>• `center`：居中裁剪<br>• `crop_top`：顶部裁剪<br>• `fit_horizontal`：保持完整显示，不裁剪（自动适配）                                                                                                                                                                               |
+| `size`        | string  | 图片尺寸（仅在 `scale_type` 为 `center` 或 `crop_top` 时生效）<br>**预设值**：<br>• `stretch`：超大图（适合高宽比 < 16:9）<br>• `large`：160×160 px（多图混排）<br>• `medium`：80×80 px（图文封面）<br>• `small`：40×40 px（头像）<br>• `tiny`：16×16 px（图标/备注）<br>**自定义**：<br>• 格式：`[width]px [height]px`，如 `"120px 80px"`（宽高范围：1–1000px） |
+| `transparent` | boolean | 是否为透明底色<br>• `true`：透明背景<br>• `false`：白色背景（默认）                                                                                                                                                                                                                                             |
+| `preview`     | boolean | 点击后是否放大预览：<br>• `true`：点击弹出图片查看器，支持放大查看<br>• `false`：点击触发卡片整体交互，不弹出查看器（默认行为需结合卡片事件）                                                                                                                                                                                                        |
 
 ```shell
 pipeline {
@@ -210,8 +216,6 @@ pipeline {
                         topImg: [
                             mode: "fit_horizontal",
                             imgKey: "img_v2_9b14e850-3757-43ae-96b4-965ed81e7f8g",
-                            compactWidth: false,
-                            customWidth: 278,
                             altContent: "这是正文顶部的图片哦!",
                         ],
                         bottomImg: [
