@@ -23,63 +23,86 @@
 - [飞书消息卡片搭建平台](https://open.feishu.cn/cardkit)
 - [Lark消息卡片搭建平台](https://open.larksuite.com/cardkit)
 
-```Json
+```json
 {
-  "config": {
-    "wide_screen_mode": true,
-    "enable_forward": true
-  },
-  "header": {
-    "template": "blue",
-    "title": {
-      "tag": "plain_text",
-      "content": " 📢 Jenkins 构建通知"
-    }
-  },
-  "elements": [
-    {
-      "alt": {
-        "content": "这是正文顶部的图片哦!",
-        "tag": "plain_text"
-      },
-      "img_key": "img_v2_cb03ec35-a638-4b93-9e6f-5e2d0e549deg",
-      "tag": "img",
-      "mode": "fit_horizontal",
-      "compact_width": false
-    },
-    {
-      "tag": "hr"
-    },
-    {
-      "tag": "markdown",
-      "content": "📋 **任务名称**：[${PROJECT_NAME}](${JENKINS_URL}/job/${PROJECT_NAME}/)\n🔢 **任务编号**：[${JOB_NAME}](${JENKINS_URL}/job/${PROJECT_NAME}/${BUILD_NUMBER}/)\n🌟 **构建状态**:  <text_tag color='blue'>${JOB_STATUS}</text_tag>\n🕐 **构建用时**:  ${JOB_DURATION}\n👤 **执  行 者**:  ${EXECUTOR_NAME}\n"
-    },
-    {
-      "tag": "hr"
-    },
-    {
-      "tag": "action",
-      "actions": [
-        {
-          "tag": "button",
-          "url": "${JENKINS_URL}/job/${PROJECT_NAME}/${BUILD_NUMBER}/changes",
-          "type": "primary",
-          "text": {
-            "tag": "plain_text",
-            "content": "更改记录"
-          }
+    "schema": "2.0",
+    "header": {
+        "title": {
+            "tag": "lark_md",
+            "content": "📢 Jenkins 构建通知"
         },
-        {
-          "tag": "button",
-          "url": "${JENKINS_URL}/job/${PROJECT_NAME}/${BUILD_NUMBER}/console",
-          "type": "primary",
-          "text": {
-            "tag": "plain_text",
-            "content": "控制台"
-          }
-        }
-      ]
+        "template": "blue"
+    },
+    "body": {
+        "elements": [
+            {
+                "tag": "hr"
+            },
+            {
+                "tag": "markdown",
+                "content": "📋 **任务名称**: [${PROJECT_NAME}](${JENKINS_URL}/job/${PROJECT_NAME}/)\n🔢 **任务编号**: [${JOB_NAME}](${JENKINS_URL}/job/${PROJECT_NAME}/${BUILD_NUMBER}/)\n🌟 **构建状态**:  <text_tag color='blue'>${JOB_STATUS}</text_tag>\n🕐 **构建用时**:  ${JOB_DURATION}\n👤 **执  行 者** :  ${EXECUTOR_NAME}\n"
+            },
+            {
+                "tag": "hr"
+            },
+            {
+                "tag": "column_set",
+                "columns": [
+                    {
+                        "tag": "column",
+                        "width": "weighted",
+                        "weight": 5,
+                        "direction": "horizontal",
+                        "action": {},
+                        "elements": [
+                            {
+                                "tag": "button",
+                                "type": "primary_filled",
+                                "size": "medium",
+                                "width": "fill",
+                                "text": {
+                                    "tag": "plain_text",
+                                    "content": "更改记录"
+                                },
+                                "behaviors": [
+                                    {
+                                        "type": "open_url",
+                                        "default_url": "${JENKINS_URL}/job/${PROJECT_NAME}/${BUILD_NUMBER}/changes"
+                                    }
+                                ]
+                            }
+                        ],
+                        "vertical_align": "top"
+                    },
+                    {
+                        "tag": "column",
+                        "width": "weighted",
+                        "weight": 5,
+                        "direction": "horizontal",
+                        "action": {},
+                        "elements": [
+                            {
+                                "tag": "button",
+                                "type": "default",
+                                "size": "medium",
+                                "width": "fill",
+                                "text": {
+                                    "tag": "plain_text",
+                                    "content": "控制台"
+                                },
+                                "behaviors": [
+                                    {
+                                        "type": "open_url",
+                                        "default_url": "${JENKINS_URL}/job/${PROJECT_NAME}/${BUILD_NUMBER}/console"
+                                    }
+                                ]
+                            }
+                        ],
+                        "vertical_align": "top"
+                    }
+                ]
+            }
+        ]
     }
-  ]
 }
 ```
