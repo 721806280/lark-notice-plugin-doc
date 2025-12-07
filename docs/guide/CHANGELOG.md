@@ -1,5 +1,24 @@
 # 更新日志
 
+## [2.1.4] 2025-11-15
+
+### ⭐ Features
+
+- 🎨 Improve structure / format of the code.
+- ✨ map 'default' JSON property in TextSize
+
+## [2.1.3] 2025-09-25
+
+### ⭐ Features
+
+- 🧑‍💻 Improve developer experience.
+- 🛂 Work on code related to authorization, roles and permissions.
+
+### 🔨 Dependency
+
+- ⬆️ Bump org.jenkins-ci.plugins:plugin from 5.24 to 5.26
+- ⬆️ Bump org.projectlombok:lombok from 1.18.40 to 1.18.42
+
 ## [2.1.2] 2025-08-09
 
 ### ⭐ Features
