@@ -15,7 +15,8 @@
   },
   "pnpm": {
     "overrides": {
-      "mdast-util-to-hast": "13.2.1"
+      "mdast-util-to-hast": "13.2.1",
+      "rollup": "4.59.0"
     }
   },
   "devDependencies": {
