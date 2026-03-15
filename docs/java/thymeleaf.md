@@ -1,6 +1,8 @@
 # Thymeleaf 模板引擎
 
-`Spring Boot`中推荐使用`Thymeleaf`作为模板引擎，因为`Thymeleaf`提供了完美的`Spring MVC`支持，它是一个跟`Velocity`、`FreeMarker`类似的模板引擎，它可以完全替代`JSP`。相较与其他的模板引擎，它有如下三个极吸引人的特点
+`Spring Boot` 通常使用 `Thymeleaf` 作为服务端模板引擎。`Thymeleaf` 提供了与 `Spring MVC` 的良好集成能力，常用于替代 `JSP`、`Velocity`、`FreeMarker` 等模板方案。
+
+相较于其他模板引擎，`Thymeleaf` 具备以下特点：
 
 - `Thymeleaf` 在有网络和无网络的环境下皆可运行，支持静态和动态页面效果。
 - `Thymeleaf` 提供开箱即用的特性，包括标准和 `Spring` 标准两种方言，可直接套用模板实现 `JSTL`、`OGNL` 表达式效果，并支持扩展和创建自定义方言。
@@ -49,7 +51,7 @@
 
 ### 数字对象
 
-`Thymeleaf` 主要使用 `org.thymeleaf.expression.Numbers` 这个类来处理数字，在模板中使用 `#numbers` 来表示这个对象。
+`Thymeleaf` 使用 `org.thymeleaf.expression.Numbers` 处理数字相关操作，在模板中通过 `#numbers` 访问该对象。
 
 ```html
 <div th:with="num=1000">
@@ -81,7 +83,7 @@
 
 ### 字符串对象
 
-`Thymeleaf` 主要使用 `org.thymeleaf.expression.Strings` 这个类来处理字符串，在模板中使用 `#strings` 来表示这个对象。
+`Thymeleaf` 使用 `org.thymeleaf.expression.Strings` 处理字符串相关操作，在模板中通过 `#strings` 访问该对象。
 
 ```html
 <div th:with="html='<h3>字符串对象</h3>'">
@@ -134,7 +136,7 @@
 
 ### 日期对象
 
-`Thymeleaf` 主要使用 `org.thymeleaf.expression.Dates` 这个类来处理日期，在模板中使用 `#dates` 来表示这个对象。
+`Thymeleaf` 使用 `org.thymeleaf.expression.Dates` 处理日期相关操作，在模板中通过 `#dates` 访问该对象。
 
 ```html
 <div th:with="html='<h3>日期对象</h3>'">
@@ -158,11 +160,11 @@
 
 ### 数组与集合对象
 
-更多方法可以去 `org.thymeleaf.expression.xxx` 查询相关源码。
+如需查看更多方法，可查阅 `org.thymeleaf.expression.*` 包中的相关源码或官方文档。
 
 ```html
 <div th:with="html='<h3>数组与集合对象</h3>'">
-    Thymeleaf主要使用
+    Thymeleaf 主要使用以下类
     <p>org.thymeleaf.expression.Arrays</p>
     <p>org.thymeleaf.expression.Lists</p>
     <p>org.thymeleaf.expression.Maps</p>
@@ -374,15 +376,15 @@
 
 ```html
 <div>
-    1、选择直接子节点id为footerA的div
+    1、选择直接子节点中 `id` 为 `footerA` 的 `div`
     <p><div th:insert="~{fragment/select.html :: /div[@id='footerA']}"></div></p>
-    2、选择全部子节点中id为footerB的div
+    2、选择全部子节点中 `id` 为 `footerB` 的 `div`
     <p><div th:insert="~{fragment/select.html :: //div[@id='footerB']}"></div></p>
-    3、选择class为content的span节点
+    3、选择 `class` 为 `content` 的 `span` 节点
     <p><div th:insert="~{fragment/select.html :: span[@class='content']}"></div></p>
-    4、选择class为footerG的span（有多个），选出第一个
+    4、选择 `class` 为 `footerG` 的 `span`（存在多个时，取第一个）
     <p><div th:insert="~{fragment/select.html :: //span[@class='footerG'][0]}"></div></p>
-    5、选择class为footerContent并且id为footerE的span（多级筛选）
+    5、选择 `class` 为 `footerContent` 且 `id` 为 `footerE` 的 `span`（多级筛选）
     <p><div th:insert="~{fragment/select.html :: //div[@class='footerContent']//span[@id='footerE']}"></div></p>
 </div>
 ```
@@ -423,13 +425,13 @@
 
 1. 普通方法
 
-    ```html
+```html
        <p><div th:if="false">我是当前节点<div>我是子节点</div></div></p>
-    ```
+```
 
 2. remove删除方法（all删除包含标签和所有的子节点）
 
-    ```html
+```html
        <table class="table">
         <thead>
         <tr th:remove="all">
@@ -446,10 +448,10 @@
         </th:block>
         </tbody>
     </table>
-    ```
+```
 
 3. remove删除方法（body不包含标记删除,但删除其所有的子节点）
-   ```html
+```html
    <table class="table">
        <thead>
        <tr th:remove="body">
@@ -466,10 +468,10 @@
        </th:block>
        </tbody>
    </table>
-   ```
+```
 4. remove删除方法（tag包含标记的删除,但不删除它的子节点）
 
-   ```html
+```html
    <table class="table">
        <thead>
            <tr th:remove="tag">
@@ -486,11 +488,11 @@
            </th:block>
        </tbody>
    </table>
-   ```
+```
    
 5. all-but-first（删除所有包含标签的孩子，除了第一个）
 
-   ```html
+```html
    <table class="table">
        <thead>
            <tr th:remove="all-but-first">
@@ -507,11 +509,11 @@
            </th:block>
        </tbody>
    </table>
-   ```
+```
    
 6. none（什么也不做）
 
-   ```html
+```html
    <table class="table">
        <thead>
            <tr th:remove="none">
@@ -528,20 +530,20 @@
            </th:block>
        </tbody>
    </table>
-   ```
+```
 
 ### 模板注释
 
 1. 注释可见
    
-   ```html
+```html
    <!-- 你看的见我 -->
-   ```
+```
 
 2. 注释不可见
-   ```html
+```html
    <!--/* 你看不见我 */-->
-   ```
+```
    
 ## 内联语法
 
@@ -648,7 +650,7 @@
 
 后台代码
 
-```java
+```html
 @Service("dict")
 public class DictService {
     
@@ -696,7 +698,7 @@ public class DictService {
 
 ### Request
 
-```java
+```html
 request.setAttribute("requestParam", id);
 ```
 
@@ -704,13 +706,13 @@ request.setAttribute("requestParam", id);
 <p th:xxxx="${requestParam}"></p>
 ```
 
-```js
+```html
 var requestParam= '[[${requestParam}]]';
 ```
 
 ### Session
 
-```java
+```html
 session.setAttribute("sessionParam", id);
 ```
 
@@ -718,13 +720,13 @@ session.setAttribute("sessionParam", id);
 <p th:xxxx="${session.sessionParam}"></p>
 ```
 
-```js
+```html
 var sessionParam = '[[${session.sessionParam}]]';
 ```
 
 ### Application
 
-```java
+```html
 application.setAttribute("applicationParam", id);
 ```
 
@@ -732,13 +734,13 @@ application.setAttribute("applicationParam", id);
 <p th:xxxx="${application.applicationParam}"></p>
 ```
 
-```js
+```html
 var applicationParam = '[[${application.applicationParam}]]';
 ```
 
 ### Spring/Model
 
-```java
+```html
 modelMap.put("modelParam", id);
 ```
 
@@ -746,7 +748,7 @@ modelMap.put("modelParam", id);
 <p th:xxxx="${modelParam}"></p>
 ```
 
-```js
+```html
 var modelParam = '[[${modelParam}]]';
 ```
 

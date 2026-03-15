@@ -1,17 +1,20 @@
 # MyBatisCodeHelperPro Crack
 
 ## 准备工作
-- [Jar反编译](https://www.decompiler.com)  [Jadx](https://github.com/skylot/jadx) [Cfr](https://github.com/leibnitz27/cfr)
+
+- [JAR 在线反编译](https://www.decompiler.com)
+- [Jadx](https://github.com/skylot/jadx)
+- [CFR](https://github.com/leibnitz27/cfr)
 - [MyBatisCodeHelperPro 插件包](https://plugins.jetbrains.com/plugin/9837-mybatiscodehelperpro/versions/stable)
 
 ## 开始处理
 
 ### 1. 反编译
 
-> 1. 反编译Jar包
-> 2. 使用IDEA编辑器打开编译包
-> 3. 全局检索关键词 TUlHZk1BMEdDU3FHU0liM0RRRUJBUVVBQTRHTkFEQ0JpUUtCZ1FDZzUyUjExV0h1MysvNUV2WnhkS0l2a3ovekpnS2VNUUhNLytMVkxSZS9zWUpFQlUxbUUrODc3MmJJckk4UThscldqSHc5cmVjQ1RWVVhXUnhWYXBndk1HYTZ3KzU4STZwYXdSaFhwZDBrRkhUY2xxeUZGWFpoS3ZiQUtoblphRGNuZkJtSkhObTQwR0JFTGpCTmx5MXpha2FIblFmUzF0QlhaSGQwOUV0c2VRSURBUUFC
-> 4. 正式版类名以及方法名称都会被混淆，反编译后细心查找，示例如下:
+> 1. 反编译 JAR 包
+> 2. 使用 IDEA 打开反编译后的代码
+> 3. 全局检索关键字符串 `TUlHZk1BMEdDU3FHU0liM0RRRUJBUVVBQTRHTkFEQ0JpUUtCZ1FDZzUyUjExV0h1MysvNUV2WnhkS0l2a3ovekpnS2VNUUhNLytMVkxSZS9zWUpFQlUxbUUrODc3MmJJckk4UThscldqSHc5cmVjQ1RWVVhXUnhWYXBndk1HYTZ3KzU4STZwYXdSaFhwZDBrRkhUY2xxeUZGWFpoS3ZiQUtoblphRGNuZkJtSkhObTQwR0JFTGpCTmx5MXpha2FIblFmUzF0QlhaSGQwOUV0c2VRSURBUUFC`
+> 4. 正式版的类名和方法名通常经过混淆，需要结合上下文定位，示例如下：
 
 ```java
 package com.ccnode.codegenerator.validate.utils;
@@ -66,7 +69,7 @@ public class RsaUtils {
 </dependency>
 ```
 
-> 注: 反编译后找到实际的全限定类名，以及方法名称后替换。
+> 注：反编译后需要先确认实际的全限定类名和方法名，再替换为对应值。
 
 ```java
 import javassist.*;
@@ -240,8 +243,9 @@ public class MyBatisCodeHelperProCrack {
 ```
 
 ### 3. 打包安装
-> 1. 将最终修改后的目录压缩为ZIP插件包
-> 2. 将修改后的插件包安装到IDEA编辑器
+
+> 1. 将最终修改后的目录重新打包为 ZIP 插件包
+> 2. 将修改后的插件包安装到 IDEA 中
 
 ### 4. 离线激活
 

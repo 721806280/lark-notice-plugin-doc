@@ -1,6 +1,6 @@
 # git commit emoji 使用指南
 
-执行 `git commit` 时使用 emoji 为本次提交打上一个 "标签", 使得此次 commit 的主要工作得以凸现，也能够使得其在整个提交历史中易于区分与查找。
+在执行 `git commit` 时使用 emoji，可以为提交信息增加语义标签，便于在提交历史中快速识别变更类型。
 
 ## commit 格式
 
@@ -17,12 +17,12 @@
 初次提交示例：
 
 ```sh
-git commit -m ":tada: Initialize Repo."
+git commit -m ":tada: Initialize repo"
 ```
 
 ## emoji 指南
 
-| Emoji | Emoji 代码                      | commit说明                                                      | commit说明              |
+| Emoji | Emoji 代码                      | 英文说明                                                        | 中文说明                |
 |-------|-------------------------------|---------------------------------------------------------------|:----------------------|
 | 🎨    | `:art:`                       | Improve structure / format of the code.                       | 改进代码结构/代码格式           |
 | ⚡️    | `:zap:`                       | Improve performance.                                          | 提升性能                  |
@@ -103,9 +103,11 @@ git commit -m ":tada: Initialize Repo."
 
 ## 如何在命令行中显示 emoji
 
-默认情况下，在命令行中并不会显示出 emoji, 仅显示 emoji 代码。
-不过可以使用 [emojify](https://github.com/mrowa44/emojify) 使得在命令行也可显示 emoji, 它是一个 shell
-脚本，安装与使用都很简单，在 [这里](https://github.com/mrowa44/emojify) 查看如何安装与使用。
+默认情况下，命令行中通常不会直接渲染 emoji，而是显示对应的代码文本。
+
+如果希望在命令行中显示 emoji，可使用 [emojify](https://github.com/mrowa44/emojify)。安装和使用方式可参考其项目说明：
+
+https://github.com/mrowa44/emojify
 
 ## 出处
 

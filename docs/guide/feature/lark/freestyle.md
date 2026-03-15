@@ -1,9 +1,17 @@
 # Freestyle 项目
 
+以下示例适用于 `Freestyle` 任务中通过插件界面配置飞书或 Lark 机器人通知的场景。
+
 ## 1. 机器人配置
+
+在全局配置中添加机器人后，可在 Freestyle 任务中选择对应机器人。
+
 ![](img/faq-config.png)
 
 ## 2. 自定义消息内容
+
+以下示例展示了自定义 Markdown 消息内容的配置方式。
+
 ![](img/faq-custom-md-msg.png)
 
 ```text
@@ -16,12 +24,15 @@
 ```
 
 ## 3. 自定义卡片消息
+
+如需发送自定义卡片消息，可先通过消息卡片搭建平台生成卡片 JSON，再粘贴到插件配置中。
+
 ![](img/faq-custom-json-msg.png)
 
-通过如下 `消息卡片搭建平台` 生成卡片消息体:
+可使用以下消息卡片搭建平台生成卡片消息体：
 
 - [飞书消息卡片搭建平台](https://open.feishu.cn/cardkit)
-- [Lark消息卡片搭建平台](https://open.larksuite.com/cardkit)
+- [Lark 消息卡片搭建平台](https://open.larksuite.com/cardkit)
 
 ```json
 {

@@ -1,7 +1,8 @@
 # SquareTest Crack
 
 ## 准备工作
-- [Jar包在线反编译](https://www.decompiler.com)
+
+- [JAR 包在线反编译](https://www.decompiler.com)
 - [JClassLib 字节码编辑器](https://github.com/ingokegel/jclasslib)
 - [SquareTest 插件包](https://plugins.jetbrains.com/plugin/10405-squaretest/versions)
 
@@ -9,9 +10,9 @@
 
 ### 1. 反编译
 
-> 1. 反编译Jar包
-> 2. 使用IDEA编辑器打开编译包
-> 3. 全局检索关键词 Validate and Save
+> 1. 反编译 JAR 包
+> 2. 使用 IDEA 打开反编译后的代码
+> 3. 全局检索关键字 `Validate and Save`
 
 ```java
 package com.squaretest.c;
@@ -31,9 +32,9 @@ public class m extends OkAction {
 }
 ```
 
-> 1. 通过 m 类引用关联到 k 类的 createActions 方法
-> 2. 找到 doOKAction 方法 (点击确定的回调方法)
-> 3. 主要验证许可证方法为: r var2 = this.a.b(var1);
+> 1. 通过 `m` 类引用定位到 `k` 类的 `createActions` 方法
+> 2. 找到 `doOKAction` 方法，即点击确认后的回调逻辑
+> 3. 许可证验证的关键调用为 `r var2 = this.a.b(var1);`
 
 ```java
 package com.squaretest.c;
@@ -136,10 +137,10 @@ public class k extends DialogWrapper {
 }
 ```
 
-> 1. 通过 b 方法引用关联到 com.squaretest.c.q 类;
-> 2. 通过 List var2 = this.b(var1); 会把输入的许可证解析为一个列表;
-> 3. 通过 this.b(var2) 主要用于验证输入的许可证格式等是否正确;
-> 4. 针对格式通过校验的许可证进行验证数字签名(DSA非对称加密算法);
+> 1. 通过 `b` 方法引用定位到 `com.squaretest.c.q` 类
+> 2. `List var2 = this.b(var1);` 用于将输入的许可证文本解析为列表
+> 3. `this.b(var2)` 用于校验许可证格式
+> 4. 对格式校验通过的许可证继续验证数字签名（DSA 非对称加密算法）
 
 ```java
 package com.squaretest.c;

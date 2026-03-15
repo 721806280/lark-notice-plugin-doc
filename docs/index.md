@@ -23,7 +23,7 @@ features:
     details: 支持 Lark、飞书与钉钉机器人，适合不同团队的协作通知场景。
   - icon: ⚙️
     title: 兼容主流任务类型
-    details: 兼容 Freestyle 与 Pipeline，沿用现有 Jenkins 作业方式即可配置通知。
+    details: 兼容 Freestyle 与 Pipeline，可沿用现有 Jenkins 作业方式配置通知。
   - icon: 📨
     title: 多消息类型
     details: 提供文本、图片、富文本、卡片与自定义 JSON，适配不同通知内容。

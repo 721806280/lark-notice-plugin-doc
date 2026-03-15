@@ -1,12 +1,12 @@
-# Swagger2.x  升级 OpenApi3.x 指南
+# Swagger 2.x 升级 OpenAPI 3.x 指南
 
-OpenApi 3 其实就是 Swagger2 的升级版。
+`OpenAPI 3` 可以理解为 `Swagger 2` 的后续规范版本。
 
-swagger 在捐献给 Linux 基金会后，就更名为 **OpenAPI Spec (OAS)**
+`Swagger` 捐赠给 Linux 基金会后，规范名称调整为 **OpenAPI Specification（OAS）**。
 
-并在 2017 年的时候发布了新的 `OpenApi 3.0` 规范。
+`OpenAPI 3.0` 规范于 2017 年发布。
 
-此文档用于将 java 应用程序从 swagger2.x 迁移到 openApi3 规范支持。
+本文档用于说明 Java 应用从 `Swagger 2.x` 迁移到 `OpenAPI 3.x` 的常见步骤。
 
 
 ## 1. 升级依赖
@@ -37,9 +37,7 @@ swagger 在捐献给 Linux 基金会后，就更名为 **OpenAPI Spec (OAS)**
 		</dependency>
 ```
 
-
-
->  openApi 相关注释或者实体的的包，均是以 `io.swagger.v3.oas` 开头的，注意不要引用错误。
+> `OpenAPI` 相关注解或模型类通常以 `io.swagger.v3.oas` 为包名前缀，使用时请注意区分旧版本包名。
 
 
 
@@ -47,13 +45,13 @@ swagger 在捐献给 Linux 基金会后，就更名为 **OpenAPI Spec (OAS)**
 
 ## 2. 注解替换
 
-**注意：这里只列了一些最基本的注解和属性，实际替换需求，请根据自己项目使用情况调整**
+> 本文仅列出常见注解和属性替换方式，实际迁移时请结合项目中的具体使用情况调整。
 
 
 
 ### 2.1 替换 @ApiOperation => @Operation
 
-- Idea 全局替换包引入（windows 快捷键 `Ctrl + Shift + R`）:
+- IntelliJ IDEA 全局替换导包（Windows 快捷键 `Ctrl + Shift + R`）：
 
     ```java
     import io.swagger.annotations.ApiOperation;
@@ -65,17 +63,17 @@ swagger 在捐献给 Linux 基金会后，就更名为 **OpenAPI Spec (OAS)**
 
 
 
-- idea 结构替换：
+- IntelliJ IDEA 结构化替换：
 
-    **由于结构替换后，注解的属性将不会保留其他的，所以要先替换同时拥有 value 和 notes 属性的注解，再替换有 value 属性的注解。如果你的项目中，`@ApiOperation `  注解中拥有更多的属性，请自己按这个逻辑梳理替换顺序。**
-    
-    结构替换：edit => find => replace structurally
+    **结构化替换后，不会自动保留未显式映射的其他属性。因此，建议先替换同时包含 `value` 和 `notes` 属性的注解，再替换仅包含 `value` 的注解。如果项目中 `@ApiOperation` 使用了更多属性，请按由多到少的顺序梳理替换规则。**
+
+    操作路径：`Edit` -> `Find` -> `Replace Structurally`
     
     <img src="./img/openapi/replace-strcturally.png" alt="replace-strcturally" style="zoom: 80%;" />
     
     
     
-    再弹窗框中，输入你的搜索模板，以及替换模板，并对模板的条件设置一些规则：
+    在弹窗中输入搜索模板和替换模板，并根据需要配置模板规则：
     
     search template:
     
@@ -94,21 +92,21 @@ swagger 在捐献给 Linux 基金会后，就更名为 **OpenAPI Spec (OAS)**
     
     <img src="./img/openapi/replace-strcturally-filter.png" alt="replace-strcturally-filter" style="zoom: 80%;" />
     
-    **这里的 $Parameter$ 添加 filter，count => [0, 无穷大]，表示匹配任意数量入参的方法**
+    **为 `$Parameter$` 添加 `filter`，并将 `count` 设置为 `[0, 无穷大]`，表示匹配任意数量参数的方法。**
     
     
     
     ![replace-strcturally-options](./img/openapi/replace-strcturally-options.png)
     
-    注意，这两个选项需要勾选，表示使用短的全类名，和使用静态 import 包。
-    
-    如果不勾选的话，替换完后注解将会变成，`@io.swagger.v3.oas.annotations.Operation` 的全类名形式。
+    这两个选项建议勾选，分别表示使用短类名和静态导入。
+
+    如果不勾选，替换后的注解会保留完整限定类名，例如 `@io.swagger.v3.oas.annotations.Operation`。
     
     
 
 
 
-- 替换完成后，继续替换只有 value 属性的 `@ApiOperation`：
+- 完成上述替换后，再处理仅包含 `value` 属性的 `@ApiOperation`：
 
 
     ```java
@@ -127,7 +125,7 @@ swagger 在捐献给 Linux 基金会后，就更名为 **OpenAPI Spec (OAS)**
 
 ### 2.2 替换 @Api => @Tag
 
-- Idea 全局替换包引入：
+- IntelliJ IDEA 全局替换导包：
 
     ```java
     import io.swagger.annotations.Api;
@@ -139,9 +137,9 @@ swagger 在捐献给 Linux 基金会后，就更名为 **OpenAPI Spec (OAS)**
 
 
 
-- Idea 结构替换：
+- IntelliJ IDEA 结构化替换：
 
-    >  注意这里，替换后，将只剩下 name 属性，如果你的项目中 @Api 注解上使用了更多的属性，请参考 2.1 节的方法，以由多到少的顺序逐个替换
+    > 替换后仅保留 `name` 属性。如果项目中的 `@Api` 使用了更多属性，请参考 2.1 节的方法，按由多到少的顺序逐步替换。
     
     ```java
     @Api(tags= $tag$)
@@ -157,7 +155,7 @@ swagger 在捐献给 Linux 基金会后，就更名为 **OpenAPI Spec (OAS)**
 
 ### 2.3 替换 @ApiModel => @Schema
 
-- Idea 全局替换包引入
+- IntelliJ IDEA 全局替换导包
 
     ```java
     // 原包名
@@ -169,12 +167,12 @@ swagger 在捐献给 Linux 基金会后，就更名为 **OpenAPI Spec (OAS)**
     ```java
     // 原包名
     import io.swagger.annotations.ApiModelProperty;
-    // 替换为，这里可能会有导包重复，格式化全局处理下就好
+    // 替换为，可能会出现重复导包，统一格式化后即可解决
     import io.swagger.v3.oas.annotations.media.Schema;
     ```
 
 
-- Idea 结构替换
+- IntelliJ IDEA 结构化替换
 
     ```java
     @ApiModel(value = $value$)
@@ -204,7 +202,7 @@ swagger 在捐献给 Linux 基金会后，就更名为 **OpenAPI Spec (OAS)**
 
 ### 给 QO 添加 @ParameterObject 注解
 
-分页查询的参数均封装在以 QO 结尾的对象中，`@ParameterObject` 注解，用于扁平化 `GetMapping` 中的入参，否则 swagger-ui 中显示的会是 json 形式参数。
+如果分页查询参数封装在以 `QO` 结尾的对象中，可添加 `@ParameterObject` 注解，将 `GetMapping` 中的对象参数展开显示。否则，`Swagger UI` 中通常会显示为 JSON 对象参数。
 
 ![replace-strcturally-qo](./img/openapi/replace-strcturally-qo.png)
 
@@ -234,15 +232,13 @@ Script = !__context__.interface && !__context__.enum && !__context__.record
 
 
 
-## 3. 更多替换
+## 3. 其他替换项
 
-上面并没有列出所有的注解替换规则，且由于官方 wiki 一直没有更新，暂时只能参看 springdoc 的文档：https://springdoc.org/#migrating-from-springfox，了解注解替换规则。
+上文未覆盖所有注解替换场景。对于更多迁移项，可参考 springdoc 官方文档：
 
-也欢迎大家在替换过程中发现一些问题或者注意的点，来提交 PR，完善此文档。
+https://springdoc.org/#migrating-from-springfox
 
-
-
-用 swagger 3 注释替换 swagger 2 注释（它已经包含在`springdoc-openapi-ui`依赖项中）。swagger 3 注释的包是`io.swagger.v3.oas.annotations`.
+`Swagger 3` 注解已包含在 `springdoc-openapi-ui` 依赖中，其包名为 `io.swagger.v3.oas.annotations`。
 
 - `@Api` → `@Tag`
 - `@ApiIgnore`→`@Parameter(hidden = true)`或`@Operation(hidden = true)`或`@Hidden`
@@ -254,4 +250,3 @@ Script = !__context__.interface && !__context__.enum && !__context__.record
 - `@ApiOperation(value = "foo", notes = "bar")` → `@Operation(summary = "foo", description = "bar")`
 - `@ApiParam` → `@Parameter`
 - `@ApiResponse(code = 404, message = "foo")` → `@ApiResponse(responseCode = "404", description = "foo")`
-
