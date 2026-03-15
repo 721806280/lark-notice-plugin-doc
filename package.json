@@ -13,7 +13,12 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
   },
+  "pnpm": {
+    "overrides": {
+      "mdast-util-to-hast": "13.2.1"
+    }
+  },
   "devDependencies": {
-    "vitepress": "2.0.0-alpha.15"
+    "vitepress": "2.0.0-alpha.16"
   }
 }
