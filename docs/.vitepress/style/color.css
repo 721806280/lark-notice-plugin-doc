@@ -4,10 +4,35 @@
     --vp-home-hero-name-background: linear-gradient( 120deg, #03CDB1 10%, #3370FF);
     --vp-home-hero-image-background-image: linear-gradient( -45deg, #03CDB160 30%, #3370FF60);
     --vp-home-hero-image-filter: blur(30px);
-
     --vp-c-brand-1: #3370FF;
     --vp-c-brand-2: #3370FF;
     --vp-c-brand-3: #03CDB1;
+    --home-hero-tagline-color: rgba(60, 72, 96, 0.92);
+    --home-feature-border: rgba(51, 112, 255, 0.1);
+    --home-feature-border-hover: rgba(51, 112, 255, 0.2);
+    --home-feature-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 249, 255, 0.96));
+    --home-feature-shadow: 0 14px 36px rgba(18, 33, 61, 0.06);
+    --home-feature-shadow-hover: 0 18px 42px rgba(18, 33, 61, 0.1);
+    --home-feature-icon-bg: linear-gradient(135deg, rgba(3, 205, 177, 0.14), rgba(51, 112, 255, 0.16));
+    --home-feature-icon-ring: inset 0 0 0 1px rgba(51, 112, 255, 0.08);
+    --home-feature-title-color: #1d2a44;
+    --home-feature-text-color: rgba(60, 72, 96, 0.9);
+}
+
+.dark {
+    --vp-home-hero-name-background: linear-gradient(120deg, #64f0d5 8%, #7aa2ff 55%, #52d6ff 100%);
+    --vp-home-hero-image-background-image: radial-gradient(circle at 30% 30%, rgba(3, 205, 177, 0.24), transparent 42%),
+    radial-gradient(circle at 70% 40%, rgba(51, 112, 255, 0.28), transparent 46%);
+    --home-hero-tagline-color: rgba(226, 232, 240, 0.78);
+    --home-feature-border: rgba(122, 162, 255, 0.16);
+    --home-feature-border-hover: rgba(122, 162, 255, 0.3);
+    --home-feature-bg: linear-gradient(180deg, rgba(22, 28, 45, 0.96), rgba(17, 23, 38, 0.98));
+    --home-feature-shadow: 0 16px 40px rgba(2, 6, 23, 0.28);
+    --home-feature-shadow-hover: 0 22px 48px rgba(2, 6, 23, 0.38);
+    --home-feature-icon-bg: linear-gradient(135deg, rgba(3, 205, 177, 0.18), rgba(51, 112, 255, 0.22));
+    --home-feature-icon-ring: inset 0 0 0 1px rgba(122, 162, 255, 0.12);
+    --home-feature-title-color: rgba(244, 247, 255, 0.96);
+    --home-feature-text-color: rgba(203, 213, 225, 0.84);
 }
 
 @media (min-width: 640px) {
@@ -22,5 +47,90 @@
     }
     .image-src {
         width: 196px;
+    }
+}
+
+.VPHome .VPHero .name,
+.VPHome .VPHero .text,
+.VPHome .VPHero .tagline {
+    max-width: 540px;
+}
+
+.VPHome .VPHero .text {
+    font-size: 32px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.VPHome .VPHero .tagline {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--home-hero-tagline-color);
+}
+
+.VPHome .VPFeatures {
+    padding-top: 20px;
+}
+
+.VPHome .VPFeatures .container {
+    max-width: 1120px;
+}
+
+.VPHome .VPFeature {
+    border: 1px solid var(--home-feature-border);
+    border-radius: 22px;
+    background: var(--home-feature-bg);
+    box-shadow: var(--home-feature-shadow);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.VPHome .VPFeature:hover {
+    border-color: var(--home-feature-border-hover);
+    box-shadow: var(--home-feature-shadow-hover);
+    transform: translateY(-2px);
+}
+
+.VPHome .VPFeature .box {
+    padding: 24px;
+}
+
+.VPHome .VPFeature .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 16px;
+    border-radius: 14px;
+    background: var(--home-feature-icon-bg);
+    font-size: 22px;
+    line-height: 1;
+    box-shadow: var(--home-feature-icon-ring);
+}
+
+.VPHome .VPFeature .title {
+    font-size: 18px;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    color: var(--home-feature-title-color);
+}
+
+.VPHome .VPFeature .details {
+    color: var(--home-feature-text-color);
+    line-height: 1.75;
+    font-size: 14px;
+}
+
+@media (max-width: 640px) {
+    .VPHome .VPHero .text {
+        font-size: 26px;
+    }
+
+    .VPHome .VPHero .tagline {
+        font-size: 15px;
+    }
+
+    .VPHome .VPFeature .box {
+        padding: 20px;
     }
 }
