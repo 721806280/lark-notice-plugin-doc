@@ -1,5 +1,21 @@
 # 更新日志
 
+## [2.1.8] 2026-04-28
+
+### ⭐ Features
+
+- 🎨 继续优化全局配置与任务通知配置页布局，统一 Jenkins 配置风格并提升多配置场景下的可读性。
+
+### 💥 Compatibility
+
+- 💥 Jenkins 基线升级到 `2.541.3`，低于该版本的 Jenkins 需要先升级后再安装 `2.1.8`。
+
+### 🔨 Dependency
+
+- ⬆️ **Bump org.jenkins-ci.plugins:plugin**
+- ⬆️ **Bump io.jenkins.tools.bom:bom-2.541.x**
+- ⬆️ **Bump org.projectlombok:lombok** from `1.18.44` to `1.18.46`
+
 ## [2.1.7] 2026-03-18
 
 ### 🐛 Fixes
